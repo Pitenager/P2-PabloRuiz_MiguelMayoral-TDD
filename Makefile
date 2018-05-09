@@ -1,5 +1,8 @@
 test:
-	sh -c '. venv/bin/activate; nosetests tests'
+	sh -c '. venv/bin/activate; nosetests tests/*.py'
+
+coverage:
+	sh -c '. venv/bin/activate; nosetests tests/*.py --with-coverage'
 
 bootstrap: venv
 	venv/bin/pip install -e .
@@ -8,6 +11,6 @@ ifneq ($(wildcard requirements.txt),)
 endif
 
 venv:
-	virtualenv venv
+	python3 -m venv venv
 	venv/bin/pip install --upgrade pip
 	venv/bin/pip install --upgrade setuptools

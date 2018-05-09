@@ -1,5 +1,7 @@
+# -*- coding: utf-8 -*-
+
 import unittest
-from sample.text_analyzer import TextAnalyzer
+from text_analyzer.text_analyzer import TextAnalyzer
 from urllib.error import URLError
 
 class TestTextAnalyzer(unittest.TestCase):
